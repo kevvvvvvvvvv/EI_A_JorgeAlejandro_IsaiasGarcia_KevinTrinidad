@@ -15,7 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('nombre')->unique();
             $table->string('direccion');
-            $table->double('precio');
+            $table->decimal('precio', 10, 2);
+            $table->integer('capacidad')->nullable();
             $table->timestamps();
         });
     }

@@ -13,12 +13,14 @@ return new class extends Migration
     {
         Schema::create('publicacion', function (Blueprint $table) {
             $table->id();
-            $table->string('descripcion');
+            $table->string('titulo');
+            $table->text('descripcion');
             $table->date('fechaP');
             $table->string('contacto');
-            $table->foreign('id')->references('id')->on('salon')->onDelete('cascade');
+            $table->unsignedBigInteger('ids');
+            $table->foreign('ids')->references('id')->on('salon')->onDelete('cascade');
             $table->timestamps();
-        });
+        });        
     }
 
     /**
