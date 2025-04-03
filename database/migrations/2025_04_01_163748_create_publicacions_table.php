@@ -11,16 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('publicacion', function (Blueprint $table) {
+        Schema::create('publicacions', function (Blueprint $table) {
             $table->id();
             $table->string('titulo');
             $table->text('descripcion');
             $table->date('fechaP');
             $table->string('contacto');
-            $table->unsignedBigInteger('ids');
-            $table->foreign('ids')->references('id')->on('salon')->onDelete('cascade');
+            $table->foreignId('salon_id')->constrained('salons')->onDelete('cascade');
             $table->timestamps();
-        });        
+        });
     }
 
     /**
