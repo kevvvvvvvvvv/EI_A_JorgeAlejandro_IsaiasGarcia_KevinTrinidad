@@ -29,7 +29,8 @@ body {
 
 .logo-container img {
     height: 40px;
-    margin-right: 10px;
+    margin-right: 20px;
+    margin-left: 20px;
 }
 
 .logo-text {
@@ -47,6 +48,8 @@ body {
 .dropdown {
     position: relative;
     display: inline-block;
+    
+    margin-right:50px;
 }
 
 .dropdown-btn {
