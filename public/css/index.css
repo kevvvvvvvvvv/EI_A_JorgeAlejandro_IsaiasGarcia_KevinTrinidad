@@ -1,0 +1,286 @@
+.banner-outer-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 1700px; /* o el ancho máximo que prefieras */
+    min-height: 100vh;
+    padding: 20px; /* añade espacio alrededor */
+    margin: 0 auto; /* centra el contenedor */
+    margin-top:25px;
+}
+
+.banner-inner-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    border-radius: 20px; /* bordes redondos para el contenedor interno */
+    /*box-shadow: 0 4px 12px rgb(0,0,0); /* sombra opcional para mejor efecto */
+}
+
+.image-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    border-radius: 20px; /* hereda los bordes redondos */
+    overflow: hidden; /* asegura que la imagen también tenga bordes redondos */
+}
+
+.banner-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    /* border-radius también podría aplicarse aquí si lo prefieres */
+}
+
+.text-container {
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    transform: translateY(-50%);
+    width: 40%;
+    padding: 30px;
+    background-color: rgba(255,255,255);
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    z-index: 2;
+}
+
+.text-wrapper {
+    width: 100%;
+}
+
+.banner-heading {
+    font-size: 3vw;
+    font-weight: bold;
+    color: #111;
+    line-height: 1.2;
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+
+.highlight-text {
+    color: #38a832;
+}
+
+/* Overlay para oscurecer ligeramente la imagen y mejorar legibilidad */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.salones-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.main-title {
+    font-size: 2rem;
+    color: #333;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Contenedor Flexbox para las tarjetas */
+.salon-grid {
+    display: flex;
+    gap: 20px; /* Espacio entre tarjetas */
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.salon-card {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    flex: 1; /* Todas las tarjetas ocupan el mismo espacio */
+    max-width: 400px; /* Ancho máximo para evitar que se estiren demasiado */
+}
+
+.salon-title {
+    font-size: 1.5rem;
+    color: #222;
+    margin: 0 0 10px 0;
+}
+
+.salon-location {
+    font-size: 1rem;
+    color: #555;
+    margin: 0;
+}
+
+.cta-button {
+    display: block;
+    width: 100%;
+    max-width: 200px;
+    margin: 30px auto 0;
+    padding: 12px 20px;
+    background-color: #38a832;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #2e8b29;
+}
+
+
+.cualidades-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+}
+
+.cualidades-titulo {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 50px;
+    font-weight: 600;
+}
+
+.cualidades-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.cualidad-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    flex: 1;
+    min-width: 250px;
+    max-width: 320px;
+}
+
+.cualidad-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.cualidad-texto {
+    font-size: 1.4rem;
+    color: #222;
+    margin: 0;
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .cualidades-grid {
+        gap: 20px;
+    }
+    
+    .cualidad-card {
+        min-width: 200px;
+        padding: 25px;
+    }
+    
+    .cualidad-texto {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .cualidades-titulo {
+        font-size: 2rem;
+        margin-bottom: 40px;
+    }
+    
+    .cualidades-grid {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+    
+    .cualidad-card {
+        width: 100%;
+        max-width: 400px;
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .cualidades-titulo {
+        font-size: 1.8rem;
+    }
+    
+    .cualidad-texto {
+        font-size: 1.1rem;
+    }
+}
+
+/* Media Query para móviles (apilar tarjetas) */
+@media (max-width: 768px) {
+    .salon-grid {
+        flex-direction: column; /* Cambia a vertical */
+        align-items: center; /* Centrar tarjetas */
+    }
+    
+    .salon-card {
+        max-width: 100%; /* Ocupa todo el ancho en móvil */
+        width: 100%;
+    }
+}
+
+
+
+/* Media queries para adaptabilidad */
+@media (max-width: 992px) {
+    .banner-heading {
+        font-size: 4vw;
+    }
+    
+    .text-container {
+        width: 50%;
+    }
+}
+
+@media (max-width: 768px) {
+    .banner-heading {
+        font-size: 5vw;
+    }
+    
+    .text-container {
+        width: 60%;
+        padding: 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .banner-heading {
+        font-size: 6vw;
+    }
+    
+    .text-container {
+        width: 80%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    
+    /* Para dispositivos muy pequeños, ajustar la altura */
+    .banner-inner-container {
+        height: 100vh;
+    }
+}

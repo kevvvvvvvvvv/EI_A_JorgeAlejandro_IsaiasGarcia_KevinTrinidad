@@ -1,10 +1,13 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\SalonController;
+use App\Http\Controllers\PublicacionController;
+use App\Http\Controllers\ReservaController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
 
 Route::get('/dashboard', function () {
@@ -18,3 +21,7 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__.'/auth.php';
+
+Route::resource('salons', SalonController::class);
+Route::resource('publicacions', PublicacionController::class);
+Route::resource('reservas', ReservaController::class);
