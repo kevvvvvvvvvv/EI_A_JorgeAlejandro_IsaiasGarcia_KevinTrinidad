@@ -49,4 +49,5 @@ class Salon extends Model
         return $this->hasMany(\App\Models\Reserva::class, 'id', 'ids');
     }
     
+
 }

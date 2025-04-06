@@ -81,4 +81,16 @@ class SalonController extends Controller
         return Redirect::route('salons.index')
             ->with('success', 'Salon deleted successfully');
     }
+
+    public function mostrarGeneral(){
+        $salones = Salon::all(); // O cualquier consulta que necesites
+        return view('salon.general', compact('salones'));
+    }
+
+    public function detail($id)
+    {
+        $salon = Salon::find($id);
+        return view('salon.detail', compact('salon'));
+    }
+
 }

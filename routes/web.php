@@ -25,3 +25,5 @@ require __DIR__.'/auth.php';
 Route::resource('salons', SalonController::class);
 Route::resource('publicacions', PublicacionController::class);
 Route::resource('reservas', ReservaController::class);
+
+Route::get('/salon/general', [SalonController::class, 'mostrarGeneral']);
