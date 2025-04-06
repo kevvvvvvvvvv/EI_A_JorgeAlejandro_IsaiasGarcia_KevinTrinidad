@@ -11,14 +11,10 @@
 <body>
     <nav class="navbar">
         <div class="logo-container">
-            <img src="{{ URL::asset('images/logo.png'); }}" alt="Imperial Hall Logo">
+            <a href="/">
+                <img src="{{ URL::asset('images/logo.png'); }}" alt="Imperial Hall Logo">
+            </a>
             <span class="logo-text">Imperial Hall</span>
-        </div>
-
-        <div class="menu-toggle" id="menuToggle">
-            <span></span>
-            <span></span>
-            <span></span>
         </div>
 
         <div class="nav-links" id="navLinks">
