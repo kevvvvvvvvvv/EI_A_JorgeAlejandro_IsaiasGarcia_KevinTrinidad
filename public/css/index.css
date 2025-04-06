@@ -81,6 +81,7 @@
     margin: 0 auto;
     padding: 20px;
     font-family: Arial, sans-serif;
+    margin-top:148px;
 }
 
 .main-title {
@@ -124,6 +125,15 @@
     font-size: 1rem;
     color: #555;
     margin: 0;
+    display: flex;
+    justify-content: space-between; /* Distribuye el espacio entre los elementos */
+    align-items: center; /* Centra verticalmente los elementos */
+    width: 100%; /* Asegura que ocupe todo el ancho disponible */
+}
+
+.salon-location .bi{
+    font-size: 22px;
+    color:#2e8b29
 }
 
 .cta-button {
@@ -153,6 +163,7 @@
     padding: 40px 20px;
     font-family: 'Arial', sans-serif;
     text-align: center;
+    margin-top: 148px;
 }
 
 .cualidades-titulo {
@@ -178,6 +189,10 @@
     flex: 1;
     min-width: 250px;
     max-width: 320px;
+}
+
+.cualidad-card i{
+    font-size: 50px;
 }
 
 .cualidad-card:hover {
