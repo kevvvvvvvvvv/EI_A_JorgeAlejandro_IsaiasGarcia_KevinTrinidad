@@ -80,8 +80,19 @@ class ReservaController extends Controller
     public function edit($id): View
     {
         $reserva = Reserva::find($id);
-
-        return view('reserva.edit', compact('reserva'));
+        
+        // Obtener eventos (misma lógica que en create)
+        $eventos = Reserva::whereIn('estado', ['confirmado', 'pendiente'])
+            ->get()
+            ->map(function ($item) {
+                return [
+                    'start' => $item->fechaR,
+                    'color' => $this->getColorByEstado($item->estado),
+                    'title' => strtoupper($item->estado)
+                ]; 
+            })->toArray();
+    
+        return view('reserva.edit', compact('reserva', 'eventos'));
     }
 
     /**

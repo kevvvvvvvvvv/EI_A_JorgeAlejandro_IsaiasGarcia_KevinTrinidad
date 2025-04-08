@@ -36,13 +36,23 @@
     </div>
     <div>
         <x-input-label for="estado" :value="__('Estado')"/>
-        <x-text-input id="estado" name="estado" type="text" class="mt-1 block w-full" :value="old('estado', $reserva?->estado)" autocomplete="estado" placeholder="Estado"/>
+        <select id="estado" name="estado" class="mt-1 block w-full border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm">
+            <option value="">Seleccione un estado</option>
+            <option value="pendiente" {{ old('estado', $reserva?->estado) == 'pendiente' ? 'selected' : '' }}>Pendiente</option>
+            <option value="confirmado" {{ old('estado', $reserva?->estado) == 'confirmado' ? 'selected' : '' }}>Confirmado</option>
+            <option value="cancelado" {{ old('estado', $reserva?->estado) == 'cancelado' ? 'selected' : '' }}>Cancelado</option>
+        </select>
         <x-input-error class="mt-2" :messages="$errors->get('estado')"/>
     </div>
     <div>
         <x-input-label for="correo" :value="__('Correo usuario')"/>
-        <x-text-input id="estado" name="estado" type="text" class="mt-1 block w-full" :value="old('estado', $reserva?->estado)" autocomplete="estado" placeholder="Estado"/>
-        <x-input-error class="mt-2" :messages="$errors->get('estado')"/>
+        <x-text-input id="correo" name="correo" type="text" class="mt-1 block w-full" :value="old('correo', $reserva?->correo)" autocomplete="correo" placeholder="Correo usuario"/>
+        <x-input-error class="mt-2" :messages="$errors->get('correo')"/>
+    </div>
+    <div>
+        <x-input-label for="nombre" :value="__('Nombre salon')"/>
+        <x-text-input id="nombre" name="nombre" type="text" class="mt-1 block w-full" :value="old('nombre', $reserva?->nombre)" autocomplete="nombre" placeholder="Nombre salon"/>
+        <x-input-error class="mt-2" :messages="$errors->get('nombre')"/>
     </div>
     <div class="flex items-center gap-4">
         <x-primary-button>Submit</x-primary-button>

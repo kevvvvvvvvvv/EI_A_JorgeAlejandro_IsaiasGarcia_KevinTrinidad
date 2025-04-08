@@ -14,10 +14,16 @@ class SalonController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index(Request $request): View
+    public function index(Request $request)
     {
         $salons = Salon::paginate();
 
+        // Si la petición espera JSON, devuelve los datos en formato JSON
+        if ($request->wantsJson()) {
+            return response()->json($salons);
+        }
+    
+        // En caso contrario, devuelve la vista
         return view('salon.index', compact('salons'))
             ->with('i', ($request->input('page', 1) - 1) * $salons->perPage());
     }
@@ -25,7 +31,7 @@ class SalonController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create(): View
+    public function create()
     {
         $salon = new Salon();
 
@@ -35,7 +41,7 @@ class SalonController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(SalonRequest $request): RedirectResponse
+    public function store(SalonRequest $request)
     {
         Salon::create($request->validated());
 
@@ -46,7 +52,7 @@ class SalonController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show($id): View
+    public function show($id)
     {
         $salon = Salon::find($id);
 
@@ -56,7 +62,7 @@ class SalonController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit($id): View
+    public function edit($id)
     {
         $salon = Salon::find($id);
 
@@ -66,7 +72,7 @@ class SalonController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(SalonRequest $request, Salon $salon): RedirectResponse
+    public function update(SalonRequest $request, Salon $salon)
     {
         $salon->update($request->validated());
 
@@ -74,7 +80,7 @@ class SalonController extends Controller
             ->with('success', 'Salon updated successfully');
     }
 
-    public function destroy($id): RedirectResponse
+    public function destroy($id)
     {
         Salon::find($id)->delete();
 

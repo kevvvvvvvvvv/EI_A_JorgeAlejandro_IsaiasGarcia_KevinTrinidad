@@ -24,6 +24,8 @@ class ReservaRequest extends FormRequest
         return [
 			'fechaR' => 'required',
 			'estado' => 'required|string',
+            'correo' => 'required|email',
+            'nombre' => 'required|string|max:255',
         ];
     }
 }

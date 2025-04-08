@@ -31,8 +31,8 @@
 									<th scope="col" class="py-3 pl-4 pr-3 text-left text-xs font-semibold uppercase tracking-wide text-gray-500">Descripcion</th>
 									<th scope="col" class="py-3 pl-4 pr-3 text-left text-xs font-semibold uppercase tracking-wide text-gray-500">Fechap</th>
 									<th scope="col" class="py-3 pl-4 pr-3 text-left text-xs font-semibold uppercase tracking-wide text-gray-500">Contacto</th>
-
-                                        <th scope="col" class="px-3 py-3 text-left text-xs font-semibold uppercase tracking-wide text-gray-500"></th>
+                                    <th scope="col" class="py-3 pl-4 pr-3 text-left text-xs font-semibold uppercase tracking-wide text-gray-500">Contacto</th>
+                                        <th scope="col" class="px-3 py-3 text-left text-xs font-semibold uppercase tracking-wide text-gray-500">Nombre salon</th>
                                     </tr>
                                     </thead>
                                     <tbody class="divide-y divide-gray-200 bg-white">
@@ -44,6 +44,7 @@
 										<td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{ $publicacion->descripcion }}</td>
 										<td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{ $publicacion->fechaP }}</td>
 										<td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{ $publicacion->contacto }}</td>
+                                        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{ $publicacion->nombre }}</td>
 
                                             <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900">
                                                 <form action="{{ route('publicacions.destroy', $publicacion->id) }}" method="POST">

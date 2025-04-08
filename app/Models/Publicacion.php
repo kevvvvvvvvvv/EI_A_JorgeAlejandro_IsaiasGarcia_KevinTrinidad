@@ -28,7 +28,7 @@ class Publicacion extends Model
      *
      * @var array<int, string>
      */
-    protected $fillable = ['titulo', 'descripcion', 'fechaP', 'contacto'];
+    protected $fillable = ['titulo', 'descripcion', 'fechaP', 'contacto', 'nombre'];
 
 
 }

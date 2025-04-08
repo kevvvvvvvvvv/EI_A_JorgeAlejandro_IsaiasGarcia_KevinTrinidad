@@ -29,7 +29,8 @@
                                         
 									<th scope="col" class="py-3 pl-4 pr-3 text-left text-xs font-semibold uppercase tracking-wide text-gray-500">Fechar</th>
 									<th scope="col" class="py-3 pl-4 pr-3 text-left text-xs font-semibold uppercase tracking-wide text-gray-500">Estado</th>
-
+									<th scope="col" class="py-3 pl-4 pr-3 text-left text-xs font-semibold uppercase tracking-wide text-gray-500">Correo usuario</th>
+                                    <th scope="col" class="py-3 pl-4 pr-3 text-left text-xs font-semibold uppercase tracking-wide text-gray-500">Nombre salon</th>
                                         <th scope="col" class="px-3 py-3 text-left text-xs font-semibold uppercase tracking-wide text-gray-500"></th>
                                     </tr>
                                     </thead>
@@ -40,6 +41,8 @@
                                             
 										<td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{ $reserva->fechaR }}</td>
 										<td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{ $reserva->estado }}</td>
+                                        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{ $reserva->correo }}</td>
+                                        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{ $reserva->nombre }}</td>
 
                                             <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900">
                                                 <form action="{{ route('reservas.destroy', $reserva->id) }}" method="POST">

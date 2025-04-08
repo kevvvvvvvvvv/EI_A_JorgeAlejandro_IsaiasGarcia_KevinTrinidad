@@ -17,7 +17,7 @@ return new class extends Migration
             $table->text('descripcion');
             $table->date('fechaP');
             $table->string('contacto');
-            #$table->foreignId('salon_id')->constrained('salons')->onDelete('cascade');
+            $table->string('nombre');
             $table->timestamps();
         });
     }

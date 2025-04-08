@@ -20,6 +20,11 @@
         <x-text-input id="contacto" name="contacto" type="text" class="mt-1 block w-full" :value="old('contacto', $publicacion?->contacto)" autocomplete="contacto" placeholder="Contacto"/>
         <x-input-error class="mt-2" :messages="$errors->get('contacto')"/>
     </div>
+    <div>
+        <x-input-label for="nombre" :value="__('Nombre salon')"/>
+        <x-text-input id="nombre" name="nombre" type="text" class="mt-1 block w-full" :value="old('nombre', $publicacion?->nombre)" autocomplete="nombre" placeholder="Nombre salon"/>
+        <x-input-error class="mt-2" :messages="$errors->get('contacto')"/>
+    </div>
 
     <div class="flex items-center gap-4">
         <x-primary-button>Submit</x-primary-button>

@@ -33,6 +33,14 @@
                                     <dt class="text-sm font-medium leading-6 text-gray-900">Estado</dt>
                                     <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{{ $reserva->estado }}</dd>
                                 </div>
+                                <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+                                    <dt class="text-sm font-medium leading-6 text-gray-900">Correo</dt>
+                                    <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{{ $reserva->correo }}</dd>
+                                </div>
+                                <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+                                    <dt class="text-sm font-medium leading-6 text-gray-900">Nombre salon</dt>
+                                    <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{{ $reserva->nombre }}</dd>
+                                </div>
 
                                     </dl>
                                 </div>

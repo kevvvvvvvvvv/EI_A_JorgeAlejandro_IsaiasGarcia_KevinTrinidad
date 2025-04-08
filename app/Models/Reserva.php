@@ -27,7 +27,7 @@ class Reserva extends Model
      *
      * @var array<int, string>
      */
-    protected $fillable = ['fechaR', 'estado'];
+    protected $fillable = ['fechaR', 'estado', 'correo', 'nombre'];
 
 
 }

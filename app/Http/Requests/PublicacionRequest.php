@@ -26,6 +26,7 @@ class PublicacionRequest extends FormRequest
 			'descripcion' => 'required|string',
 			'fechaP' => 'required',
 			'contacto' => 'required|string',
+            'nombre' => 'required|string',
         ];
     }
 }

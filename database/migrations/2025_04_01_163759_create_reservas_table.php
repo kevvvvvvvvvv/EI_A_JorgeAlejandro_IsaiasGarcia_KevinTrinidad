@@ -15,11 +15,10 @@ return new class extends Migration
             $table->id();
             $table->date('fechaR');
             $table->string('estado');
-            #$table->foreignId('ids')->constrained('salons')->onDelete('cascade'); 
-            #$table->foreignId('idu')->constrained('users')->onDelete('cascade');            
+            $table->string('correo');
+            $table->string('nombre');
             $table->timestamps();
         });
-        
     }
 
     /**
