@@ -13,7 +13,7 @@ class PublicacionSeeder extends Seeder
      */
     public function run(): void
     {
-        DB::table('tu_tabla')->insert([
+        DB::table('publicacions')->insert([
             [
                 'titulo' => 'Evento en Lugar A',
                 'descripcion' => 'Descripción del evento en Lugar A',

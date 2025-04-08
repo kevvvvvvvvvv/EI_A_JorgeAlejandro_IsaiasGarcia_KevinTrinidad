@@ -17,6 +17,7 @@ class DatabaseSeeder extends Seeder
         $this->call([
             SalonsSeeder::class,
             ReservaSeeder::class,
+            PublicacionSeeder::class,
         ]);
 
         User::factory()->create([
