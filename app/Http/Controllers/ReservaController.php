@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests\ReservaRequest;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
+use Illuminate\Support\Facades\DB;
 
 class ReservaController extends Controller
 {
@@ -25,11 +26,31 @@ class ReservaController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create(): View
+    public function create()
     {
         $reserva = new Reserva();
-
-        return view('reserva.create', compact('reserva'));
+        
+        // Obtener eventos formateando la fecha en PHP
+        $eventos = Reserva::whereIn('estado', ['confirmado', 'pendiente'])
+            ->get()
+            ->map(function ($item) {
+                return [
+                    'start' => $item->fechaR, // Usar el campo fechaR directamente
+                    'color' => $this->getColorByEstado($item->estado),
+                    'title' => strtoupper($item->estado)
+                ];
+            })->toArray();
+    
+        return view('reserva.create', compact('reserva', 'eventos'));
+    }
+    
+    private function getColorByEstado($estado)
+    {
+        return match($estado) {
+            'confirmado' => '#ef4444',    // Rojo
+            'pendiente' => '#eab308',     // Amarillo
+            default => '#6b7280'          // Gris
+        };
     }
 
     /**
@@ -80,5 +101,21 @@ class ReservaController extends Controller
 
         return Redirect::route('reservas.index')
             ->with('success', 'Reserva deleted successfully');
+    }
+
+    public function mostrarCalendario(){
+        // Obtener todas las reservas
+        $reservas = DB::table('reservas')->get();
+        
+        // Obtener solo fechas ocupadas (confirmadas o pendientes)
+        $fechasOcupadas = DB::table('reservas')
+            ->whereIn('estado', ['confirmado', 'pendiente'])
+            ->pluck('fechaR')
+            ->toArray();
+
+        return view('reserva.calendario', [
+            'reservas' => $reservas,
+            'fechasOcupadas' => $fechasOcupadas
+        ]);
     }
 }

@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
+use MongoDB\Laravel\Eloquent\Model;
 
 /**
  * Class Salon
@@ -22,7 +22,7 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Salon extends Model
 {
-    
+    protected $connection = 'mongodb';
     protected $perPage = 20;
 
     /**

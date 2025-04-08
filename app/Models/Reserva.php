@@ -2,7 +2,8 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
+
+use MongoDB\Laravel\Eloquent\Model;
 
 /**
  * Class Reserva
@@ -18,7 +19,7 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Reserva extends Model
 {
-    
+    protected $connection = 'mongodb';
     protected $perPage = 20;
 
     /**

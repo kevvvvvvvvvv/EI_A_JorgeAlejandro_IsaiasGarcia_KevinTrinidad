@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
+use MongoDB\Laravel\Eloquent\Model;
 
 /**
  * Class Publicacion
@@ -20,7 +20,7 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Publicacion extends Model
 {
-    
+    protected $connection = 'mongodb';
     protected $perPage = 20;
 
     /**
