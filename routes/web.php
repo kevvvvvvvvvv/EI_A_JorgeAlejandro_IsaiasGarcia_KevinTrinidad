@@ -26,6 +26,6 @@ Route::resource('salons', SalonController::class);
 Route::resource('publicacions', PublicacionController::class);
 Route::resource('reservas', ReservaController::class);
 
-Route::get('/salon/general', [SalonController::class, 'mostrarGeneral']);
+Route::get('/salon/general', [SalonController::class, 'mostrarGeneral'])->name('salon.general');
 
 Route::get('/reserva/calendario', [ReservaController::class, 'mostrarCalendario']);

@@ -44,7 +44,7 @@
         </div>
     </div>
     
-    <button class="cta-button">Conocer más</button>
+    <a href="{{ route('salon.general') }}"><button class="cta-button">Conocer más</button></a>
 </div>
 
 
@@ -57,7 +57,7 @@
             <h2 class="cualidad-texto">Elegancia y exclusividad</h2>
         </div>
         
-        <div class="cualidad-card mid-card">
+        <div class="mid-card">
             <i class="bi bi-patch-check-fill"></i>
             <h2 class="cualidad-texto mid-card">Servicio integral y profesionalismo</h2>
         </div>

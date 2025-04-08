@@ -192,10 +192,6 @@ body {
     color: #ffffff;
 }
 
-.mid-card {
-    background-color: #2e8b29;
-    color: white;
-}
 
 /* Iconos (usando Font Awesome) */
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');

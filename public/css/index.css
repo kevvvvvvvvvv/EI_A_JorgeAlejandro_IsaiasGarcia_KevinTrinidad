@@ -10,6 +10,10 @@
     margin-top:25px;
 }
 
+a{
+    text-decoration: none;
+}
+
 .banner-inner-container {
     position: relative;
     width: 100%;
@@ -208,7 +212,20 @@
     line-height: 1.4;
 }
 
+.mid-card {
+    background-color: #2e8b29;
+    color: white;
+    border-radius: 12px;
+    padding: 30px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    flex: 1;
+    min-width: 250px;
+    max-width: 320px;
+}
 
+.mid-card i{
+    font-size: 50px;
+}
 
 /* Responsive Design */
 @media (max-width: 992px) {
@@ -216,11 +233,11 @@
         gap: 20px;
     }
     
-    .cualidad-card {
+    .cualidad-card, .mid-card {
         min-width: 200px;
         padding: 25px;
     }
-    
+
     .cualidad-texto {
         font-size: 1.2rem;
     }
@@ -238,7 +255,7 @@
         gap: 15px;
     }
     
-    .cualidad-card {
+    .cualidad-card, .mid-card {
         width: 100%;
         max-width: 400px;
         padding: 20px;
