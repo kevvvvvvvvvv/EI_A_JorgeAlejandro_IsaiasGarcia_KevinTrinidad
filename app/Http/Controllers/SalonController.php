@@ -18,12 +18,11 @@ class SalonController extends Controller
     {
         $salons = Salon::paginate();
 
-        // Si la petición espera JSON, devuelve los datos en formato JSON
+
         if ($request->wantsJson()) {
             return response()->json($salons);
         }
-    
-        // En caso contrario, devuelve la vista
+
         return view('salon.index', compact('salons'))
             ->with('i', ($request->input('page', 1) - 1) * $salons->perPage());
     }

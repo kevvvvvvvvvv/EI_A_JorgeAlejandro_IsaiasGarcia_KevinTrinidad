@@ -81,4 +81,10 @@ class PublicacionController extends Controller
         return Redirect::route('publicacions.index')
             ->with('success', 'Publicacion deleted successfully');
     }
+
+
+    public function general(){
+        $publicacions = Publicacion::all();
+        return view('publicacion.publicacion', compact('publicacions'));
+    }
 }

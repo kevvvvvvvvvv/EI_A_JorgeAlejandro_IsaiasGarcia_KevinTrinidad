@@ -27,19 +27,19 @@
         <div class="salon-card">
             <img src="{{URL::asset('images/salon_1.jpeg')}}" alt="">
             <h2 class="salon-title">Salón 1</h2>
-            <p class="salon-location"><i class="bi bi-geo-alt-fill"></i> Location 1 <a href=""><i class="bi bi-arrow-right-circle-fill"></i></a></p>
+            <p class="salon-location"><i class="bi bi-geo-alt-fill"></i> Location 1 <a href="{{route('publicacion.general')}}"><i class="bi bi-arrow-right-circle-fill"></i></a></p>
         </div>
         
         <div class="salon-card">
             <img src="{{URL::asset('images/salon_2.jpeg')}}" alt="">
             <h2 class="salon-title">Salón 2</h2>
-            <p class="salon-location"><i class="bi bi-geo-alt-fill"></i> Location 2 <a href=""><i class="bi bi-arrow-right-circle-fill"></i></a></p>
+            <p class="salon-location"><i class="bi bi-geo-alt-fill"></i> Location 2 <a href="{{route('publicacion.general')}}"><i class="bi bi-arrow-right-circle-fill"></i></a></p>
         </div>
         
         <div class="salon-card">
             <img src="{{URL::asset('images/salon_3.jpg')}}" alt="">
             <h2 class="salon-title">Salón 3</h2>
-            <p class="salon-location"><i class="bi bi-geo-alt-fill"></i> Location 3 <a href=""><i class="bi bi-arrow-right-circle-fill"></i></a></p>
+            <p class="salon-location"><i class="bi bi-geo-alt-fill"></i> Location 3 <a href="{{route('publicacion.general')}}"><i class="bi bi-arrow-right-circle-fill"></i></a></p>
             
         </div>
     </div>

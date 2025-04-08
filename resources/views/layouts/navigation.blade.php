@@ -211,10 +211,9 @@
         <div class="dropdown">
             <button class="dropdown-btn">Salones</button>
             <div class="dropdown-content">
-                <a  href="{{ route('salons.index') }}">Salón Imperial</a>
-                <a href="#">Salón Real</a>
-                <a href="#">Salón Ejecutivo</a>
-                <a href="#">Salón de Fiestas</a>
+                <a href="{{ route('salons.index') }}">Salones</a>
+                <a href="{{ route('reservas.index')}}">Reservas</a>
+                <a href="{{ route('publicacions.index')}}">Publicaciones</a>
             </div>
         </div>
         <div class="dropdown">
