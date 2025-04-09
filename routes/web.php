@@ -22,9 +22,10 @@ Route::middleware('auth')->group(function () {
 
 require __DIR__.'/auth.php';
 
-Route::resource('salons', SalonController::class);
-Route::resource('publicacions', PublicacionController::class);
-Route::resource('reservas', ReservaController::class);
+Route::resource('salons', SalonController::class)->middleware('auth');
+Route::resource('publicacions', PublicacionController::class)->middleware('auth');
+Route::resource('reservas', ReservaController::class)->middleware('auth');
+
 
 Route::get('/salon/general', [SalonController::class, 'mostrarGeneral'])->name('salon.general');
 
